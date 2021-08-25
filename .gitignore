@@ -1,3 +1,9 @@
+# ignore data files
+*.txt
+*.csv
+*gz
+*.fastq
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
