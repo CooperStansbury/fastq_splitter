@@ -112,7 +112,7 @@ if __name__ == '__main__':
     # INPUT ARGUMENT DEFINITIONS
     ############################################################################################
     
-    desc = """A Python3 commandline tool process Pore-C-SnakeMake outputs for PaohVis"""
+    desc = """A Python3 commandline tool to virtually digest sequences based on NlaIII sites."""
     parser = argparse.ArgumentParser(description=desc)
 
     parser.add_argument("-i", 
@@ -130,7 +130,7 @@ if __name__ == '__main__':
                         nargs='?',
                         type=bool, 
                         default=True,
-                        help="If True, overwrite the directory at `-od`")
+                        help="If True, overwrite the directory at `-o`")
   
     ############################################################################################
     # INPUT ARGUMENT PARSING
@@ -152,6 +152,8 @@ if __name__ == '__main__':
     
     # generate pairs
     pairs_table = split_fastq(FASTQ, N)
+    
+    print(pairs_table.columns)
         
     # get input file basename and generate output filename 
     base = os.path.basename(FASTQ)
